@@ -4,7 +4,7 @@ import cartIcon from "../../images/cartIcon.svg";
 import favoriteIcon from "../../images/favoriteIcon.svg";
 import profileIcon from "../../images/profileIcon.svg";
 
-export function Header({ onCartClick }) {
+export function Header({ toggleCart }) {
   return (
     <div className={styles.header}>
       <div className={styles.header__logoContainer}>
@@ -16,8 +16,8 @@ export function Header({ onCartClick }) {
         </div>
       </div>
       <div className={styles.header__iconsContainer}>
-        <img src={cartIcon} alt="#" className={styles.header__cartIcon} onClick={onCartClick} />
-        <span className={styles.header__totalSum} onClick={onCartClick}>
+        <img src={cartIcon} alt="#" className={styles.header__cartIcon} onClick={toggleCart} />
+        <span className={styles.header__totalSum} onClick={toggleCart}>
           $1205.00
         </span>
         <img src={favoriteIcon} alt="#" className={styles.header__favoriteIcon} />

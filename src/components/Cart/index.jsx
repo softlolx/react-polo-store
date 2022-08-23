@@ -1,9 +1,9 @@
 import styles from "./Cart.module.scss";
 import closeButton from "../../images/closeButton.svg";
 
-export function Cart({ onCartClick }) {
+export function Cart({ toggleCart }) {
   return (
-    <div className={styles.cart}>
+    <div className={styles.cart} onClick={toggleCart}>
       <div className={styles.order}>
         <div className={styles.order__header}>
           <div className={styles.order__titleWrap}>
@@ -12,7 +12,7 @@ export function Cart({ onCartClick }) {
               src={closeButton}
               alt="#"
               className={styles.order__cartCloseButton}
-              onClick={onCartClick}
+              onClick={toggleCart}
             />
           </div>
           <ul className={styles.order__list}>

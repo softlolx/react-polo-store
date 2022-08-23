@@ -9,10 +9,16 @@ import { Cart } from "../Cart";
 function App() {
   const [cartOpened, setCartOpened] = useState(false);
 
+  function toggleCartOpen(e) {
+    if (e.target === e.currentTarget) {
+      setCartOpened((prev) => (prev = !prev));
+    }
+  }
+
   return (
     <>
-      {cartOpened ? <Cart onCartClick={() => setCartOpened((prev) => (prev = !prev))} /> : null}
-      <Header onCartClick={() => setCartOpened((prev) => (prev = !prev))} />
+      {cartOpened ? <Cart toggleCart={toggleCartOpen} /> : null}
+      <Header toggleCart={toggleCartOpen} />
       <Main />
     </>
   );
