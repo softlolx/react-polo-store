@@ -11,11 +11,24 @@ export function Cart({ onCartClick }) {
             <img
               src={closeButton}
               alt="#"
-              className={styles.order__cartCloseIcon}
+              className={styles.order__cartCloseButton}
               onClick={onCartClick}
             />
           </div>
-          <li className={styles.order__list}>ur order</li>
+          <ul className={styles.order__list}>
+            <li className={styles.item}>
+              <img
+                src="https://cdn-images.farfetch-contents.com/17/75/79/01/17757901_39581136_1000.jpg"
+                alt="#"
+                className={styles.item__image}
+              />
+              <div className={styles.item__descriptionContainer}>
+                <p className={styles.item__title}>DAwesome polo shirt fro men</p>
+                <p className={styles.item__price}>$120.00</p>
+              </div>
+              <button className={styles.item__deleteButton}></button>
+            </li>
+          </ul>
         </div>
         <div className={styles.order__total}>
           <p className={styles.order__totalSum}>Total:</p>

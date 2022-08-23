@@ -1,8 +1,17 @@
 import styles from "./Main.module.scss";
 import { Card } from "../Card";
 import { data } from "../../utils/poloApi";
+import { useEffect } from "react";
 
 export function Main() {
+  const [cards, setCards] = useState();
+
+  useEffect(() => {
+    async function fetchCards() {
+      setUsers(await null);
+    }
+  });
+
   return (
     <div className={styles.main}>
       <div className={styles.main__titleContainer}>
