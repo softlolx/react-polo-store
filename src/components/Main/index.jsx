@@ -1,5 +1,6 @@
 import styles from "./Main.module.scss";
 import { Card } from "../Card";
+import { data } from "../../utils/poloApi";
 
 export function Main() {
   return (
@@ -9,12 +10,17 @@ export function Main() {
         <input type="text" placeholder="Search..." className={styles.main__searchInput} />
       </div>
       <div className={styles.main__cardsContainer}>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {data?.map((item) => {
+          return (
+            <Card
+              key={item._id}
+              id={item._id}
+              imageUrl={item.imageUrl}
+              description={item.description}
+              price={item.price}
+            />
+          );
+        })}
       </div>
     </div>
   );

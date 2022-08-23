@@ -1,7 +1,7 @@
 .card {
   box-sizing: border-box;
   width: 210px;
-  height: 340px;
+  min-height: 340px;
   padding: 20px;
   border: 1px solid #f3f3f3;
   border-radius: 40px;
@@ -20,14 +20,14 @@
   @media (max-width: 880px) {
     & {
       width: 180px;
-      height: 300px;
+      min-height: 300px;
     }
   }
 
   @media (max-width: 500px) {
     & {
       width: 150px;
-      height: 260px;
+      min-height: 260px;
     }
   }
 
@@ -43,7 +43,7 @@
 
     padding: 0;
     width: 32px;
-    height: 32px;
+    min-height: 32px;
     border: 1px solid #f2f2f2;
     border-radius: 8px;
 
@@ -76,11 +76,11 @@
 
   &__productTitle {
     margin: 0;
-    min-height: 34px;
+    min-min-height: 34px;
 
     font-weight: 400;
     font-size: 14px;
-    line-height: 17px;
+    line-min-height: 17px;
   }
 
   &__bottomContainer {
@@ -98,7 +98,7 @@
   &__priceTitle {
     font-weight: 500;
     font-size: 11px;
-    line-height: 13px;
+    line-min-height: 13px;
     text-transform: uppercase;
 
     color: #bdbdbd;
@@ -108,14 +108,14 @@
   &__price {
     font-weight: 700;
     font-size: 14px;
-    line-height: 17px;
+    line-min-height: 17px;
     margin: 0;
   }
 
   &__addToCartButton {
     padding: 0;
     width: 32px;
-    height: 32px;
+    min-height: 32px;
     border: 1px solid #f2f2f2;
     border-radius: 8px;
 
