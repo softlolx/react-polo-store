@@ -46,13 +46,31 @@
   }
 
   &__searchInput {
+    box-sizing: border-box;
     width: 250px;
-    height: 45px;
+    height: 40px;
     border: 1px solid #f3f3f3;
     border-radius: 10px;
+    padding-left: 10px;
+
+    &::placeholder {
+      padding-left: 10px;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
     @media (max-width: 880px) {
       & {
-        width: 120px;
+        width: 178px;
+        height: 36px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      & {
+        width: 148px;
         height: 24px;
       }
     }
