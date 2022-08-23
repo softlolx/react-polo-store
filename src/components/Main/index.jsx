@@ -8,19 +8,19 @@ export function Main() {
 
   useEffect(() => {
     (async function () {
-      setCards(await (await fetch("https://mockend.com/softlolx/react-polo-store/cards")).json());
+      // this is a fake fetch request :)
+      setCards(await data);
     })();
   }, []);
 
   return (
     <div className={styles.main}>
-      {cards ? console.log(cards) : null}
       <div className={styles.main__titleContainer}>
         <h1 className={styles.main__title}>Polo shirts</h1>
         <input type="text" placeholder="Search..." className={styles.main__searchInput} />
       </div>
       <div className={styles.main__cardsContainer}>
-        {data?.map((item) => {
+        {cards?.map((item) => {
           return (
             <Card
               key={item._id}
