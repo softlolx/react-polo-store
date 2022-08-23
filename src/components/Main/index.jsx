@@ -1,16 +1,16 @@
 import styles from "./Main.module.scss";
 import { Card } from "../Card";
 import { data } from "../../utils/poloApi";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export function Main() {
   const [cards, setCards] = useState();
 
   useEffect(() => {
-    async function fetchCards() {
-      setUsers(await null);
-    }
-  });
+    (async function () {
+      setCards(await (await fetch("https://jsonplaceholder.typicode.com/todos/1")).json());
+    })();
+  }, []);
 
   return (
     <div className={styles.main}>
