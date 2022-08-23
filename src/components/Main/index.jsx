@@ -5,7 +5,7 @@ export function Main() {
   return (
     <div className={styles.main}>
       <div className={styles.main__titleContainer}>
-        <h1 className={styles.main__title}>All Polos</h1>
+        <h1 className={styles.main__title}>Polo shirts</h1>
         <input type="text" placeholder="Search..." className={styles.main__searchInput} />
       </div>
       <div className={styles.main__cardsContainer}>
