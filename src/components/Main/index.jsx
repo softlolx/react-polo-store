@@ -8,12 +8,13 @@ export function Main() {
 
   useEffect(() => {
     (async function () {
-      setCards(await (await fetch("https://jsonplaceholder.typicode.com/todos/1")).json());
+      setCards(await (await fetch("https://mockend.com/softlolx/react-polo-store/cards")).json());
     })();
   }, []);
 
   return (
     <div className={styles.main}>
+      {cards ? console.log(cards) : null}
       <div className={styles.main__titleContainer}>
         <h1 className={styles.main__title}>Polo shirts</h1>
         <input type="text" placeholder="Search..." className={styles.main__searchInput} />
