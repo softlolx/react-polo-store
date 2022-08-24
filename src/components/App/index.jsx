@@ -16,7 +16,7 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
   const [favoritedItems, setFavoritedItems] = useState([]);
 
-  const [inputValue, setInputValue] = useState("");
+  const [searchInputValue, setSearchInputValue] = useState("");
 
   //getting initial cards on main page
   useEffect(() => {
@@ -63,8 +63,8 @@ function App() {
     }
   }
 
-  function changeInputValue(evt) {
-    setInputValue(evt.target.value);
+  function changeSearchInputValue(evt) {
+    setSearchInputValue(evt.target.value);
   }
 
   return (
@@ -86,7 +86,7 @@ function App() {
       ) : null}
       <Header toggleCart={toggleCartOpen} />
 
-      <Main inputValue={inputValue} changeInputValue={changeInputValue}>
+      <Main searchInputValue={searchInputValue} changeSearchInputValue={changeSearchInputValue}>
         {cards?.map((item) => {
           return (
             <Card
