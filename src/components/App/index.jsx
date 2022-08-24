@@ -16,6 +16,8 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
   const [favoritedItems, setFavoritedItems] = useState([]);
 
+  const [inputValue, setInputValue] = useState("");
+
   //getting initial cards on main page
   useEffect(() => {
     (async function () {
@@ -61,6 +63,10 @@ function App() {
     }
   }
 
+  function changeInputValue(evt) {
+    setInputValue(evt.target.value);
+  }
+
   return (
     <>
       {cartOpened ? (
@@ -80,7 +86,7 @@ function App() {
       ) : null}
       <Header toggleCart={toggleCartOpen} />
 
-      <Main>
+      <Main inputValue={inputValue} changeInputValue={changeInputValue}>
         {cards?.map((item) => {
           return (
             <Card
