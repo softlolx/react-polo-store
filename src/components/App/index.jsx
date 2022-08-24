@@ -12,8 +12,11 @@ import { CartItem } from "../CartItem";
 function App() {
   const [cartOpened, setCartOpened] = useState(false);
   const [cards, setCards] = useState();
-  const [cartItems, setCartItems] = useState();
 
+  const [cartItems, setCartItems] = useState([]);
+  const [favoritedItems, setFavoritedItems] = useState([]);
+
+  //getting initial cards on main page
   useEffect(() => {
     (async function () {
       // this is a fake fetch request :)
@@ -21,9 +24,40 @@ function App() {
     })();
   }, []);
 
+  //opening and closing cart
   function toggleCartOpen(e) {
     if (e.target === e.currentTarget) {
       setCartOpened((prev) => (prev = !prev));
+    }
+  }
+
+  function addToCart(id) {
+    let card;
+    cards.forEach((item) => {
+      if (item._id == id) {
+        card = item;
+      }
+    });
+
+    if (!cartItems.includes(card)) {
+      setCartItems((prev) => [...prev, card]);
+    } else {
+      setCartItems((prev) => prev.filter((item) => item._id !== id));
+    }
+  }
+
+  function addToFavorite(id) {
+    let card;
+    cards.forEach((item) => {
+      if (item._id == id) {
+        card = item;
+      }
+    });
+
+    if (!favoritedItems.includes(card)) {
+      setFavoritedItems((prev) => [...prev, card]);
+    } else {
+      setFavoritedItems((prev) => prev.filter((item) => item._id !== id));
     }
   }
 
@@ -55,6 +89,8 @@ function App() {
               imageUrl={item.imageUrl}
               description={item.description}
               price={item.price}
+              addToFavorite={addToFavorite}
+              addToCart={addToCart}
             />
           );
         })}
