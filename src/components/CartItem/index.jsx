@@ -1,6 +1,6 @@
 import styles from "./CartItem.module.scss";
 
-export function CartItem({ id, imageUrl, description, price }) {
+export function CartItem({ id, imageUrl, description, price, removeFromCart }) {
   return (
     <li className={styles.item}>
       <img src={imageUrl} alt="#" className={styles.item__image} />
@@ -8,7 +8,7 @@ export function CartItem({ id, imageUrl, description, price }) {
         <p className={styles.item__title}>{description}</p>
         <p className={styles.item__price}>{`$${price}`}</p>
       </div>
-      <button className={styles.item__deleteButton}></button>
+      <button className={styles.item__deleteButton} onClick={() => removeFromCart(id)}></button>
     </li>
   );
 }

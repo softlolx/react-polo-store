@@ -35,12 +35,23 @@ function App() {
 
   function addToCart(id) {
     const card = cards.filter((item) => item._id === id)[0];
+    const cardIndex = cards.indexOf(card);
 
     if (!cartItems.includes(card)) {
       setCartItems((prev) => [...prev, card]);
+      setCards((prev) => [...prev, (prev[cardIndex].addedToCart = true)]);
     } else {
       setCartItems((prev) => prev.filter((item) => item._id !== id));
+      setCards((prev) => [...prev, (prev[cardIndex].addedToCart = false)]);
     }
+  }
+
+  function removeFromCart(id) {
+    const card = cards.filter((item) => item._id === id)[0];
+    const cardIndex = cards.indexOf(card);
+
+    setCartItems((prev) => prev.filter((item) => item._id !== id));
+    setCards((prev) => [...prev, (prev[cardIndex].addedToCart = false)]);
   }
 
   function addToFavorite(id) {
@@ -70,6 +81,7 @@ function App() {
                 imageUrl={item.imageUrl}
                 description={item.description}
                 price={item.price}
+                removeFromCart={removeFromCart}
               />
             );
           })}
@@ -86,6 +98,7 @@ function App() {
               imageUrl={item.imageUrl}
               description={item.description}
               price={item.price}
+              isAddedToCart={item.addedToCart}
               addToFavorite={addToFavorite}
               addToCart={addToCart}
             />
