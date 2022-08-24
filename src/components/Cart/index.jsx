@@ -1,7 +1,7 @@
 import styles from "./Cart.module.scss";
 import closeButton from "../../images/closeButton.svg";
 
-export function Cart({ toggleCart }) {
+export function Cart({ toggleCart, children }) {
   return (
     <div className={styles.cart} onClick={toggleCart}>
       <div className={styles.order}>
@@ -15,20 +15,7 @@ export function Cart({ toggleCart }) {
               onClick={toggleCart}
             />
           </div>
-          <ul className={styles.order__list}>
-            <li className={styles.item}>
-              <img
-                src="https://cdn-images.farfetch-contents.com/17/75/79/01/17757901_39581136_1000.jpg"
-                alt="#"
-                className={styles.item__image}
-              />
-              <div className={styles.item__descriptionContainer}>
-                <p className={styles.item__title}>DAwesome polo shirt fro men</p>
-                <p className={styles.item__price}>$120.00</p>
-              </div>
-              <button className={styles.item__deleteButton}></button>
-            </li>
-          </ul>
+          <ul className={styles.order__list}>{children}</ul>
         </div>
         <div className={styles.order__total}>
           <p className={styles.order__totalSum}>Total:</p>
