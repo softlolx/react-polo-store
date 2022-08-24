@@ -34,12 +34,7 @@ function App() {
   }
 
   function addToCart(id) {
-    let card;
-    cards.forEach((item) => {
-      if (item._id == id) {
-        card = item;
-      }
-    });
+    const card = cards.filter((item) => item._id === id)[0];
 
     if (!cartItems.includes(card)) {
       setCartItems((prev) => [...prev, card]);
@@ -49,12 +44,7 @@ function App() {
   }
 
   function addToFavorite(id) {
-    let card;
-    cards.forEach((item) => {
-      if (item._id == id) {
-        card = item;
-      }
-    });
+    const card = cards.filter((item) => item._id === id)[0];
 
     if (!favoritedItems.includes(card)) {
       setFavoritedItems((prev) => [...prev, card]);
@@ -65,6 +55,7 @@ function App() {
 
   function changeSearchInputValue(evt) {
     setSearchInputValue(evt.target.value);
+    setCards((prev) => prev.filter((item) => item.description.includes(searchInputValue)));
   }
 
   return (

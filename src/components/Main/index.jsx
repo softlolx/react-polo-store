@@ -1,6 +1,6 @@
 import styles from "./Main.module.scss";
 
-export function Main({ children, searchinputValue, changeSearchInputValue }) {
+export function Main({ children, searchInputValue, changeSearchInputValue }) {
   return (
     <div className={styles.main}>
       <div className={styles.main__titleContainer}>
@@ -10,7 +10,7 @@ export function Main({ children, searchinputValue, changeSearchInputValue }) {
           placeholder="Search..."
           className={styles.main__searchInput}
           onChange={changeSearchInputValue}
-          value={searchinputValue}
+          value={searchInputValue}
         />
       </div>
       <div className={styles.main__cardsContainer}>{children}</div>
