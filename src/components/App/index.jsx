@@ -36,23 +36,43 @@ function App() {
 
   function addToCart(id) {
     const card = cards.filter((item) => item._id === id)[0];
-    const cardIndex = cards.indexOf(card);
 
     if (!cartItems.includes(card)) {
       setCartItems((prev) => [...prev, card]);
-      setCards((prev) => [...prev, (prev[cardIndex].addedToCart = true)]);
+
+      setCards((prev) =>
+        prev.map((item) => {
+          if (item._id == id) {
+            item.addedToCart = true;
+          }
+          return item;
+        })
+      );
     } else {
       setCartItems((prev) => prev.filter((item) => item._id !== id));
-      setCards((prev) => [...prev, (prev[cardIndex].addedToCart = false)]);
+      setCards((prev) =>
+        prev.map((item) => {
+          if (item._id == id) {
+            item.addedToCart = false;
+          }
+          return item;
+        })
+      );
     }
   }
 
   function removeFromCart(id) {
-    const card = cards.filter((item) => item._id === id)[0];
-    const cardIndex = cards.indexOf(card);
+    // const card = cards.filter((item) => item._id === id)[0];
 
     setCartItems((prev) => prev.filter((item) => item._id !== id));
-    setCards((prev) => [...prev, (prev[cardIndex].addedToCart = false)]);
+    setCards((prev) =>
+      prev.map((item) => {
+        if (item._id == id) {
+          item.addedToCart = false;
+        }
+        return item;
+      })
+    );
   }
 
   function addToFavorite(id) {
