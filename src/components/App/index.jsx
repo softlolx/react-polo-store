@@ -8,6 +8,7 @@ import { Main } from "../Main";
 import { Card } from "../Card";
 import { Cart } from "../Cart";
 import { CartItem } from "../CartItem";
+import { EmptyCart } from "../EmptyCart";
 
 function App() {
   const [cartOpened, setCartOpened] = useState(false);
@@ -66,25 +67,28 @@ function App() {
 
   function changeSearchInputValue(evt) {
     setSearchInputValue(evt.target.value);
-    setCards((prev) => prev.filter((item) => item.description.includes(searchInputValue)));
   }
 
   return (
     <>
       {cartOpened ? (
         <Cart toggleCart={toggleCartOpen}>
-          {cartItems?.map((item) => {
-            return (
-              <CartItem
-                key={item._id}
-                id={item._id}
-                imageUrl={item.imageUrl}
-                description={item.description}
-                price={item.price}
-                removeFromCart={removeFromCart}
-              />
-            );
-          })}
+          {cartItems.length > 0 ? (
+            cartItems.map((item) => {
+              return (
+                <CartItem
+                  key={item._id}
+                  id={item._id}
+                  imageUrl={item.imageUrl}
+                  description={item.description}
+                  price={item.price}
+                  removeFromCart={removeFromCart}
+                />
+              );
+            })
+          ) : (
+            <EmptyCart />
+          )}
         </Cart>
       ) : null}
       <Header toggleCart={toggleCartOpen} />
