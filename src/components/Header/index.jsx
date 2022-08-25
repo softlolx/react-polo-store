@@ -8,16 +8,16 @@ import { Link } from "react-router-dom";
 export function Header({ toggleCart }) {
   return (
     <div className={styles.header}>
-      <div className={styles.header__logoContainer}>
-        <img src={logo} alt="#" className={styles.header__logo} />
+      <Link to="/" style={{ textDecoration: "none" }}>
+        <div className={styles.header__logoContainer}>
+          <img src={logo} alt="#" className={styles.header__logo} />
 
-        <Link to="/" style={{ textDecoration: "none" }}>
           <div className={styles.header__logoTextContainer}>
             <h2 className={styles.header__logoTitle}>ALLIGATOR POLO</h2>
             <p className={styles.header__logoDescription}>The best polo store</p>
           </div>
-        </Link>
-      </div>
+        </div>
+      </Link>
       <div className={styles.header__iconsContainer}>
         <img src={cartIcon} alt="#" className={styles.header__cartIcon} onClick={toggleCart} />
         <span className={styles.header__totalSum} onClick={toggleCart}>
