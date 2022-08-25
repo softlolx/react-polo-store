@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.0def103f.css",
-    "main.js": "/static/js/main.3be26042.js",
-    "static/media/emptyCart.svg": "/static/media/emptyCart.55fe8e379f3163297f98dfd7eef7cdd2.svg",
-    "static/media/addToFavBtn.svg": "/static/media/addToFavBtn.47866e45f21cc6b3ec09.svg",
-    "static/media/favoriteIcon.svg": "/static/media/favoriteIcon.31c528b014374dd8bafb45d68779796e.svg",
-    "static/media/addToCartBtn_active.svg": "/static/media/addToCartBtn_active.aa8d05e929a8ba6db80d.svg",
-    "static/media/logo.svg": "/static/media/logo.4f9f8428be9dd671647868174d3fa77c.svg",
-    "static/media/addToFavBtn_active.svg": "/static/media/addToFavBtn_active.36b0297aa48d897d14d2.svg",
-    "static/media/profileIcon.svg": "/static/media/profileIcon.381202f7e3edbc1a00b14fbd5e529a32.svg",
-    "static/media/cartIcon.svg": "/static/media/cartIcon.5113b08fb682dc25f3856ef704a6c05d.svg",
-    "index.html": "/index.html",
-    "static/media/closeButton.svg": "/static/media/closeButton.b1fef0aa93fbf25374f4991d23f900d8.svg",
-    "static/media/addToCartButton.svg": "/static/media/addToCartButton.a4c35ddbacd9564e07ef.svg",
-    "main.0def103f.css.map": "/static/css/main.0def103f.css.map",
-    "main.3be26042.js.map": "/static/js/main.3be26042.js.map"
+    "main.css": "/react-polo-store/static/css/main.7e66336f.css",
+    "main.js": "/react-polo-store/static/js/main.cda27e95.js",
+    "static/media/emptyCart.svg": "/react-polo-store/static/media/emptyCart.55fe8e379f3163297f98dfd7eef7cdd2.svg",
+    "static/media/addToFavBtn.svg": "/react-polo-store/static/media/addToFavBtn.47866e45f21cc6b3ec09.svg",
+    "static/media/favoriteIcon.svg": "/react-polo-store/static/media/favoriteIcon.31c528b014374dd8bafb45d68779796e.svg",
+    "static/media/addToCartBtn_active.svg": "/react-polo-store/static/media/addToCartBtn_active.aa8d05e929a8ba6db80d.svg",
+    "static/media/logo.svg": "/react-polo-store/static/media/logo.4f9f8428be9dd671647868174d3fa77c.svg",
+    "static/media/addToFavBtn_active.svg": "/react-polo-store/static/media/addToFavBtn_active.36b0297aa48d897d14d2.svg",
+    "static/media/profileIcon.svg": "/react-polo-store/static/media/profileIcon.381202f7e3edbc1a00b14fbd5e529a32.svg",
+    "static/media/cartIcon.svg": "/react-polo-store/static/media/cartIcon.5113b08fb682dc25f3856ef704a6c05d.svg",
+    "index.html": "/react-polo-store/index.html",
+    "static/media/closeButton.svg": "/react-polo-store/static/media/closeButton.b1fef0aa93fbf25374f4991d23f900d8.svg",
+    "static/media/addToCartButton.svg": "/react-polo-store/static/media/addToCartButton.a4c35ddbacd9564e07ef.svg",
+    "main.7e66336f.css.map": "/react-polo-store/static/css/main.7e66336f.css.map",
+    "main.cda27e95.js.map": "/react-polo-store/static/js/main.cda27e95.js.map"
   },
   "entrypoints": [
-    "static/css/main.0def103f.css",
-    "static/js/main.3be26042.js"
+    "static/css/main.7e66336f.css",
+    "static/js/main.cda27e95.js"
   ]
 }
