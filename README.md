@@ -1,3 +1,9 @@
+# Simple Online Store on React.js
+
+View deployment:
+
+https://react-polo-store.vercel.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

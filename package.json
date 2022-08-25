@@ -2,7 +2,7 @@
   "name": "react-polo-store",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://softlolx.github.io",
+  "homepage": "https://softlolx.github.io/react-polo-store/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
