@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import styles from "./App.module.scss";
 import { data } from "../../utils/poloApi";
@@ -82,8 +82,24 @@ function App() {
 
     if (!favoritedItems.includes(card)) {
       setFavoritedItems((prev) => [...prev, card]);
+      setCards((prev) =>
+        prev.map((item) => {
+          if (item._id == id) {
+            item.addedToFavorite = true;
+          }
+          return item;
+        })
+      );
     } else {
       setFavoritedItems((prev) => prev.filter((item) => item._id !== id));
+      setCards((prev) =>
+        prev.map((item) => {
+          if (item._id == id) {
+            item.addedToFavorite = false;
+          }
+          return item;
+        })
+      );
     }
   }
 
@@ -131,6 +147,7 @@ function App() {
                     description={item.description}
                     price={item.price}
                     isAddedToCart={item.addedToCart}
+                    isFavorited={item.addedToFavorite}
                     addToFavorite={addToFavorite}
                     addToCart={addToCart}
                   />
@@ -142,11 +159,8 @@ function App() {
         <Route
           path="/bookmarks"
           element={
-            <Bookmarks
-              searchInputValue={searchInputValue}
-              changeSearchInputValue={changeSearchInputValue}
-            >
-              {cards?.map((item) => {
+            <Bookmarks>
+              {favoritedItems?.map((item) => {
                 return (
                   <Card
                     key={item._id}
@@ -155,6 +169,7 @@ function App() {
                     description={item.description}
                     price={item.price}
                     isAddedToCart={item.addedToCart}
+                    isFavorited={item.addedToFavorite}
                     addToFavorite={addToFavorite}
                     addToCart={addToCart}
                   />

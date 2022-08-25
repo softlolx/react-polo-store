@@ -136,6 +136,10 @@
     }
   }
 
+  &__favLink {
+    display: flex;
+  }
+
   &__favoriteIcon {
     &:hover {
       cursor: pointer;

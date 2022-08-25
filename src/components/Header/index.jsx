@@ -23,7 +23,7 @@ export function Header({ toggleCart }) {
         <span className={styles.header__totalSum} onClick={toggleCart}>
           $1205.00
         </span>
-        <Link to="/bookmarks">
+        <Link to="/bookmarks" className={styles.header__favLink}>
           <img src={favoriteIcon} alt="#" className={styles.header__favoriteIcon} />
         </Link>
         <img src={profileIcon} alt="#" className={styles.header__profileIcon} />

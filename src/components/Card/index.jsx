@@ -7,15 +7,16 @@ export function Card({
   description,
   price,
   isAddedToCart,
+  isFavorited,
   addToFavorite,
   addToCart,
 }) {
-  const [favorited, setFavorited] = useState(false);
-  // const [addedToCart, setAddedToCart] = useState(false);
+  // const [favorited, setFavorited] = useState(false);
+  // // const [addedToCart, setAddedToCart] = useState(false);
 
-  function toggleFavButton() {
-    setFavorited((prev) => (prev = !prev));
-  }
+  // function toggleFavButton() {
+  //   setFavorited((prev) => (prev = !prev));
+  // }
 
   // function toggleAddButton() {
   //   setAddedToCart((prev) => (prev = !prev));
@@ -26,11 +27,10 @@ export function Card({
       <div className={styles.card__photoContainer}>
         <button
           className={`${styles.card__favButton} ${
-            favorited ? styles.card__favButton_active : null
+            isFavorited ? styles.card__favButton_active : null
           }`}
           onClick={() => {
             addToFavorite(id);
-            toggleFavButton();
           }}
         ></button>
         <img src={imageUrl} alt="polo image" className={styles.card__productPhoto} />
