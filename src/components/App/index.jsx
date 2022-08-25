@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Routes, Route, Link } from "react-router-dom";
 
 import styles from "./App.module.scss";
 import { data } from "../../utils/poloApi";
@@ -9,6 +10,7 @@ import { Card } from "../Card";
 import { Cart } from "../Cart";
 import { CartItem } from "../CartItem";
 import { EmptyCart } from "../EmptyCart";
+import { Bookmarks } from "../Bookmarks";
 
 function App() {
   const [cartOpened, setCartOpened] = useState(false);
@@ -112,23 +114,56 @@ function App() {
         </Cart>
       ) : null}
       <Header toggleCart={toggleCartOpen} />
-
-      <Main searchInputValue={searchInputValue} changeSearchInputValue={changeSearchInputValue}>
-        {cards?.map((item) => {
-          return (
-            <Card
-              key={item._id}
-              id={item._id}
-              imageUrl={item.imageUrl}
-              description={item.description}
-              price={item.price}
-              isAddedToCart={item.addedToCart}
-              addToFavorite={addToFavorite}
-              addToCart={addToCart}
-            />
-          );
-        })}
-      </Main>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Main
+              searchInputValue={searchInputValue}
+              changeSearchInputValue={changeSearchInputValue}
+            >
+              {cards?.map((item) => {
+                return (
+                  <Card
+                    key={item._id}
+                    id={item._id}
+                    imageUrl={item.imageUrl}
+                    description={item.description}
+                    price={item.price}
+                    isAddedToCart={item.addedToCart}
+                    addToFavorite={addToFavorite}
+                    addToCart={addToCart}
+                  />
+                );
+              })}
+            </Main>
+          }
+        />
+        <Route
+          path="/bookmarks"
+          element={
+            <Bookmarks
+              searchInputValue={searchInputValue}
+              changeSearchInputValue={changeSearchInputValue}
+            >
+              {cards?.map((item) => {
+                return (
+                  <Card
+                    key={item._id}
+                    id={item._id}
+                    imageUrl={item.imageUrl}
+                    description={item.description}
+                    price={item.price}
+                    isAddedToCart={item.addedToCart}
+                    addToFavorite={addToFavorite}
+                    addToCart={addToCart}
+                  />
+                );
+              })}
+            </Bookmarks>
+          }
+        />
+      </Routes>
     </>
   );
 }

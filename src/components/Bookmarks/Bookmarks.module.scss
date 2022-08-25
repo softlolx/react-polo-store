@@ -1,0 +1,77 @@
+.bookmarks {
+  padding: 0 45px;
+
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 880px) {
+    & {
+      padding: 0 20px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    & {
+      padding: 0 10px;
+    }
+  }
+
+  &__titleContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    @media (max-width: 880px) {
+      & {
+        gap: 12px;
+      }
+    }
+    @media (max-width: 500px) {
+      & {
+        gap: 8px;
+      }
+    }
+  }
+
+  &__backButton {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: #ffffff;
+    border: 1px solid #f2f2f2;
+    border-radius: 8px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    @media (max-width: 880px) {
+      & {
+        font-size: 24px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &__cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 20px;
+
+    justify-content: space-around;
+
+    @media (max-width: 880px) {
+      & {
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      & {
+        gap: 20px 15px;
+      }
+    }
+  }
+}
