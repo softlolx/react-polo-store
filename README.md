@@ -2,7 +2,7 @@
 
 View deployment:
 
-https://react-polo-store.vercel.app/
+https://react-polo-store-palgta1s5-softlolx.vercel.app/
 
 # Getting Started with Create React App
 
