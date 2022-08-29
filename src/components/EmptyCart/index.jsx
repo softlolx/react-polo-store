@@ -7,7 +7,7 @@ export function EmptyCart() {
       <img src={emptyBoxImage} alt="#" className={styles.emptyCart__image} />
       <h4 className={styles.emptyCart__title}>Cart is empty</h4>
       <p className={styles.emptyCart__subtitle}>
-        Get back and choose some polo shirt and they'll apper here
+        Get back and choose some polo shirt and they'll appear here
       </p>
     </li>
   );

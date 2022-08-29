@@ -43,8 +43,6 @@ function App() {
     if (!cartItems.includes(card)) {
       setCartItems((prev) => [...prev, card]);
 
-      // REFACTOR to prev.filter
-
       setCards((prev) =>
         prev.map((item) => {
           if (item._id == id) {
