@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
-import styles from "./App.module.scss";
 import { data } from "../../utils/poloApi";
 import { ThemeContext } from "../context";
 
@@ -12,10 +11,12 @@ import { Cart } from "../Cart";
 import { CartItem } from "../CartItem";
 import { EmptyCart } from "../EmptyCart";
 import { Bookmarks } from "../Bookmarks";
+import { OrderDoneCart } from "../OrderDoneCart";
 
 function App() {
   const [cartOpened, setCartOpened] = useState(false);
   const [cards, setCards] = useState();
+  const [orderCompleted, setOrderCompleted] = useState(false);
 
   const [cartItems, setCartItems] = useState([]);
   const [orderSum, setOrderSum] = useState("");
@@ -66,8 +67,6 @@ function App() {
   }
 
   function removeFromCart(id) {
-    // const card = cards.filter((item) => item._id === id)[0];
-
     setCartItems((prev) => prev.filter((item) => item._id !== id));
     setCards((prev) =>
       prev.map((item) => {
@@ -118,10 +117,25 @@ function App() {
     setOrderSum(newOrderSum);
   }, [cartItems]);
 
+  function completeOrder() {
+    setOrderCompleted(true);
+
+    setCartItems([]);
+    setTimeout(() => {
+      setOrderCompleted(false);
+      setCards((prev) =>
+        prev.map((item) => {
+          item.addedToCart = false;
+          return item;
+        })
+      );
+    }, 3500);
+  }
+
   return (
     <ThemeContext.Provider value={"white"}>
       {cartOpened ? (
-        <Cart toggleCart={toggleCartOpen} orderSum={orderSum}>
+        <Cart toggleCart={toggleCartOpen} orderSum={orderSum} onOrder={completeOrder}>
           {cartItems.length > 0 ? (
             cartItems.map((item) => {
               return (
@@ -135,8 +149,10 @@ function App() {
                 />
               );
             })
-          ) : (
+          ) : !orderCompleted ? (
             <EmptyCart />
+          ) : (
+            <OrderDoneCart />
           )}
         </Cart>
       ) : null}
