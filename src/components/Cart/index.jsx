@@ -1,7 +1,13 @@
 import styles from "./Cart.module.scss";
 import closeButton from "../../images/closeButton.svg";
+import { useEffect } from "react";
 
 export function Cart({ toggleCart, orderSum, onOrder, children }) {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => (document.body.style.overflow = "unset");
+  }, []);
+
   return (
     <div className={styles.cart} onClick={toggleCart}>
       <div className={styles.order}>
