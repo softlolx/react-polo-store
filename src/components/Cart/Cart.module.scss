@@ -127,5 +127,11 @@
       cursor: not-allowed;
       background-color: #7f8775;
     }
+
+    @media (max-width: 880px) {
+      & {
+        margin-bottom: 50px;
+      }
+    }
   }
 }

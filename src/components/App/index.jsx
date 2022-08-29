@@ -121,15 +121,25 @@ function App() {
     setOrderCompleted(true);
 
     setCartItems([]);
-    setTimeout(() => {
-      setOrderCompleted(false);
-      setCards((prev) =>
-        prev.map((item) => {
-          item.addedToCart = false;
-          return item;
-        })
-      );
-    }, 3500);
+    // setTimeout(() => {
+    //   setOrderCompleted(false);
+    //   setCards((prev) =>
+    //     prev.map((item) => {
+    //       item.addedToCart = false;
+    //       return item;
+    //     })
+    //   );
+    // }, 3500);
+  }
+
+  function resetOrder() {
+    setOrderCompleted(false);
+    setCards((prev) =>
+      prev.map((item) => {
+        item.addedToCart = false;
+        return item;
+      })
+    );
   }
 
   return (
@@ -152,7 +162,7 @@ function App() {
           ) : !orderCompleted ? (
             <EmptyCart />
           ) : (
-            <OrderDoneCart />
+            <OrderDoneCart resetOrder={resetOrder} />
           )}
         </Cart>
       ) : null}
