@@ -21,7 +21,7 @@ export function Header({ toggleCart, orderSum }) {
       <div className={styles.header__iconsContainer}>
         <img src={cartIcon} alt="#" className={styles.header__cartIcon} onClick={toggleCart} />
         <span className={styles.header__totalSum} onClick={toggleCart}>
-          {`$${orderSum.toFixed(2)}`}
+          {`$${orderSum ? orderSum.toFixed(2) : "0"}`}
         </span>
         <Link to="/bookmarks" className={styles.header__favLink}>
           <img src={favoriteIcon} alt="#" className={styles.header__favoriteIcon} />
