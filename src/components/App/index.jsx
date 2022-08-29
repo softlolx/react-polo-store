@@ -119,8 +119,8 @@ function App() {
 
   function completeOrder() {
     setOrderCompleted(true);
-
     setCartItems([]);
+
     // setTimeout(() => {
     //   setOrderCompleted(false);
     //   setCards((prev) =>
@@ -145,7 +145,12 @@ function App() {
   return (
     <ThemeContext.Provider value={"white"}>
       {cartOpened ? (
-        <Cart toggleCart={toggleCartOpen} orderSum={orderSum} onOrder={completeOrder}>
+        <Cart
+          toggleCart={toggleCartOpen}
+          orderSum={orderSum}
+          onOrder={completeOrder}
+          resetOrder={resetOrder}
+        >
           {cartItems.length > 0 ? (
             cartItems.map((item) => {
               return (
