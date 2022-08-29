@@ -18,6 +18,7 @@ function App() {
   const [cards, setCards] = useState();
 
   const [cartItems, setCartItems] = useState([]);
+  const [orderSum, setOrderSum] = useState("");
   const [favoritedItems, setFavoritedItems] = useState([]);
 
   const [searchInputValue, setSearchInputValue] = useState("");
@@ -108,10 +109,19 @@ function App() {
     setSearchInputValue(evt.target.value);
   }
 
+  useEffect(() => {
+    let newOrderSum = 0;
+    cartItems.forEach((item) => {
+      newOrderSum += item.price;
+    });
+
+    setOrderSum(newOrderSum);
+  }, [cartItems]);
+
   return (
     <ThemeContext.Provider value={"white"}>
       {cartOpened ? (
-        <Cart toggleCart={toggleCartOpen}>
+        <Cart toggleCart={toggleCartOpen} orderSum={orderSum}>
           {cartItems.length > 0 ? (
             cartItems.map((item) => {
               return (
@@ -130,7 +140,7 @@ function App() {
           )}
         </Cart>
       ) : null}
-      <Header toggleCart={toggleCartOpen} />
+      <Header toggleCart={toggleCartOpen} orderSum={orderSum} />
       <Routes>
         <Route
           path="/"

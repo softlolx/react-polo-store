@@ -1,7 +1,7 @@
 import styles from "./Cart.module.scss";
 import closeButton from "../../images/closeButton.svg";
 
-export function Cart({ toggleCart, children }) {
+export function Cart({ toggleCart, orderSum, children }) {
   return (
     <div className={styles.cart} onClick={toggleCart}>
       <div className={styles.order}>
@@ -18,8 +18,8 @@ export function Cart({ toggleCart, children }) {
           <ul className={styles.order__list}>{children}</ul>
         </div>
         <div className={styles.order__total}>
-          <p className={styles.order__totalSum}>Total:</p>
-          <p className={styles.order__totalTax}>Tax:</p>
+          <p className={styles.order__totalSum}>{`Total: $${orderSum.toFixed(2)}`}</p>
+          <p className={styles.order__totalTax}>{`Tax (5%): $${(orderSum * 0.05).toFixed(2)}`}</p>
           <button className={styles.order__button}>Order</button>
         </div>
       </div>

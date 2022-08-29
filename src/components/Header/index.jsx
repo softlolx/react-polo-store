@@ -5,7 +5,7 @@ import favoriteIcon from "../../images/favoriteIcon.svg";
 import profileIcon from "../../images/profileIcon.svg";
 import { Link } from "react-router-dom";
 
-export function Header({ toggleCart }) {
+export function Header({ toggleCart, orderSum }) {
   return (
     <div className={styles.header}>
       <Link to="/" style={{ textDecoration: "none" }}>
@@ -21,7 +21,7 @@ export function Header({ toggleCart }) {
       <div className={styles.header__iconsContainer}>
         <img src={cartIcon} alt="#" className={styles.header__cartIcon} onClick={toggleCart} />
         <span className={styles.header__totalSum} onClick={toggleCart}>
-          $1205.00
+          {`$${orderSum.toFixed(2)}`}
         </span>
         <Link to="/bookmarks" className={styles.header__favLink}>
           <img src={favoriteIcon} alt="#" className={styles.header__favoriteIcon} />
