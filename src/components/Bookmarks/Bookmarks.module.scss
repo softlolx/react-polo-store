@@ -40,6 +40,19 @@
     background: #ffffff;
     border: 1px solid #f2f2f2;
     border-radius: 8px;
+    background-image: url(../../images/backArrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:hover {
+      cursor: pointer;
+      scale: 1.1;
+      transition: scale 0.15s ease-in-out;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
   }
 
   &__title {

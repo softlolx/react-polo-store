@@ -20,7 +20,9 @@ export function Cart({ toggleCart, orderSum, children }) {
         <div className={styles.order__total}>
           <p className={styles.order__totalSum}>{`Total: $${orderSum.toFixed(2)}`}</p>
           <p className={styles.order__totalTax}>{`Tax (5%): $${(orderSum * 0.05).toFixed(2)}`}</p>
-          <button className={styles.order__button}>Order</button>
+          <button className={styles.order__button} disabled={!orderSum}>
+            Order
+          </button>
         </div>
       </div>
     </div>
