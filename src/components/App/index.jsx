@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import styles from "./App.module.scss";
 import { data } from "../../utils/poloApi";
+import { ThemeContext } from "../context";
 
 import { Header } from "../Header";
 import { Main } from "../Main";
@@ -41,6 +42,8 @@ function App() {
 
     if (!cartItems.includes(card)) {
       setCartItems((prev) => [...prev, card]);
+
+      // REFACTOR to prev.filter
 
       setCards((prev) =>
         prev.map((item) => {
@@ -108,7 +111,7 @@ function App() {
   }
 
   return (
-    <>
+    <ThemeContext.Provider value={"white"}>
       {cartOpened ? (
         <Cart toggleCart={toggleCartOpen}>
           {cartItems.length > 0 ? (
@@ -179,7 +182,7 @@ function App() {
           }
         />
       </Routes>
-    </>
+    </ThemeContext.Provider>
   );
 }
 
