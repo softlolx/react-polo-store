@@ -1,8 +1,20 @@
+@keyframes popUp {
+  from {
+    transform: scale(0.1);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
 .bookmarks {
   padding: 0 45px;
 
   display: flex;
   flex-direction: column;
+
+  animation: popUp 0.3s ease-in-out;
 
   @media (max-width: 880px) {
     & {

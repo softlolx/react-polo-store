@@ -1,3 +1,13 @@
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
 .cart {
   position: fixed;
   top: 0;
@@ -7,6 +17,8 @@
   z-index: 9;
 
   background-color: rgba(0, 0, 0, 0.5);
+
+  animation: slideIn 0.3s ease-in-out;
 }
 
 .order {
