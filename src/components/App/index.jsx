@@ -14,6 +14,7 @@ import { Bookmarks } from "../Bookmarks";
 import { OrderDoneCart } from "../OrderDoneCart";
 
 function App() {
+  const [darkTheme, setDarkTheme] = useState(false);
   const [cartOpened, setCartOpened] = useState(false);
   const [cards, setCards] = useState();
   const [orderCompleted, setOrderCompleted] = useState(false);
@@ -142,8 +143,12 @@ function App() {
     );
   }
 
+  function toggleTheme() {
+    setDarkTheme((prevState) => !prevState);
+  }
+
   return (
-    <ThemeContext.Provider value={"white"}>
+    <ThemeContext.Provider value={darkTheme}>
       {cartOpened ? (
         <Cart
           toggleCart={toggleCartOpen}
@@ -171,7 +176,7 @@ function App() {
           )}
         </Cart>
       ) : null}
-      <Header toggleCart={toggleCartOpen} orderSum={orderSum} />
+      <Header toggleCart={toggleCartOpen} orderSum={orderSum} toggleTheme={toggleTheme} />
       <Routes>
         <Route
           path="/"

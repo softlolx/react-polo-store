@@ -8,6 +8,11 @@
   justify-content: space-between;
   align-items: center;
 
+  &_dark {
+    background-color: rgb(26, 26, 27);
+    border-bottom: 1px solid #c1d4e6;
+  }
+
   @media (max-width: 880px) {
     & {
       padding: 0 20px;
@@ -58,6 +63,10 @@
     font-size: 20px;
     line-height: 24px;
     color: black;
+
+    &_dark {
+      color: rgb(193, 212, 230);
+    }
 
     @media (max-width: 880px) {
       & {
@@ -158,7 +167,9 @@
     }
   }
 
-  &__profileIcon {
+  &__themeIcon {
+    width: 20px;
+    height: 20px;
     &:hover {
       cursor: pointer;
       scale: 1.1;
