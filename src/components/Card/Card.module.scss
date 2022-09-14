@@ -10,6 +10,10 @@
   flex-direction: column;
   justify-content: space-between;
 
+  &_dark {
+    border: 1px solid rgb(193, 212, 230);
+  }
+
   &:hover {
     transform: translateY(-5px);
     transition: transform 0.2s ease-in-out;
@@ -82,6 +86,10 @@
     font-weight: 400;
     font-size: 14px;
     line-min-height: 17px;
+
+    &_dark {
+      color: rgb(193, 212, 230);
+    }
   }
 
   &__bottomContainer {
@@ -111,6 +119,10 @@
     font-size: 14px;
     line-min-height: 17px;
     margin: 0;
+
+    &_dark {
+      color: rgb(193, 212, 230);
+    }
   }
 
   &__addToCartButton {

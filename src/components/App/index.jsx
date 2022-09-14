@@ -14,7 +14,7 @@ import { Bookmarks } from "../Bookmarks";
 import { OrderDoneCart } from "../OrderDoneCart";
 
 function App() {
-  const [darkTheme, setDarkTheme] = useState(false);
+  const [darkTheme, setDarkTheme] = useState(true);
   const [cartOpened, setCartOpened] = useState(false);
   const [cards, setCards] = useState();
   const [orderCompleted, setOrderCompleted] = useState(false);

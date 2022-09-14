@@ -6,6 +6,7 @@
 
   &_dark {
     background-color: rgb(26, 26, 27);
+    border-radius: 0 0 20px 20px;
   }
 
   @media (max-width: 880px) {
@@ -46,6 +47,10 @@
         font-size: 24px;
         line-height: 24px;
       }
+    }
+
+    &_dark {
+      color: rgb(193, 212, 230);
     }
   }
 

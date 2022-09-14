@@ -1,5 +1,6 @@
 import styles from "./Card.module.scss";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { ThemeContext } from "../context";
 
 export function Card({
   id,
@@ -22,8 +23,10 @@ export function Card({
   //   setAddedToCart((prev) => (prev = !prev));
   // }
 
+  const darkThemeEnabled = useContext(ThemeContext);
+
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card} ${!darkThemeEnabled ? styles.card_dark : ""}`}>
       <div className={styles.card__photoContainer}>
         <button
           className={`${styles.card__favButton} ${
@@ -35,11 +38,19 @@ export function Card({
         ></button>
         <img src={imageUrl} alt="polo image" className={styles.card__productPhoto} />
       </div>
-      <p className={styles.card__productTitle}>{description}</p>
+      <p
+        className={`${styles.card__productTitle} ${
+          !darkThemeEnabled ? styles.card__productTitle_dark : ""
+        }`}
+      >
+        {description}
+      </p>
       <div className={styles.card__bottomContainer}>
         <div className={styles.card__priceContainer}>
           <p className={styles.card__priceTitle}>Price:</p>
-          <p className={styles.card__price}>{`$${price}`}</p>
+          <p
+            className={`${styles.card__price} ${!darkThemeEnabled ? styles.card__price_dark : ""}`}
+          >{`$${price}`}</p>
         </div>
         <button
           className={`${styles.card__addToCartButton} ${
