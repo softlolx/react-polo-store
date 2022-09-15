@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-polo-store/static/css/main.3521548a.css",
-    "main.js": "/react-polo-store/static/js/main.b6e8e199.js",
+    "main.js": "/react-polo-store/static/js/main.99fbbbac.js",
     "static/media/emptyCart.svg": "/react-polo-store/static/media/emptyCart.55fe8e379f3163297f98dfd7eef7cdd2.svg",
     "static/media/orderDoneCart.svg": "/react-polo-store/static/media/orderDoneCart.925049e2cb1ec0734fce0774e0c4323e.svg",
     "static/media/addToFavBtn.svg": "/react-polo-store/static/media/addToFavBtn.47866e45f21cc6b3ec09.svg",
@@ -18,10 +18,10 @@
     "static/media/addToCartButton.svg": "/react-polo-store/static/media/addToCartButton.a4c35ddbacd9564e07ef.svg",
     "static/media/backArrow.svg": "/react-polo-store/static/media/backArrow.f163466227b28b81ed58.svg",
     "main.3521548a.css.map": "/react-polo-store/static/css/main.3521548a.css.map",
-    "main.b6e8e199.js.map": "/react-polo-store/static/js/main.b6e8e199.js.map"
+    "main.99fbbbac.js.map": "/react-polo-store/static/js/main.99fbbbac.js.map"
   },
   "entrypoints": [
     "static/css/main.3521548a.css",
-    "static/js/main.b6e8e199.js"
+    "static/js/main.99fbbbac.js"
   ]
 }
