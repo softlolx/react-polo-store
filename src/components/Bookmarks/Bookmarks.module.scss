@@ -10,11 +10,16 @@
 
 .bookmarks {
   padding: 0 45px;
+  height: calc(100% - 100px);
+  border-radius: 0 0 20px 20px;
 
   display: flex;
   flex-direction: column;
 
   animation: popUp 0.3s ease-in-out;
+  &_dark {
+    background-color: rgb(26, 26, 27);
+  }
 
   @media (max-width: 880px) {
     & {
@@ -49,8 +54,8 @@
     width: 35px;
     height: 35px;
     border: none;
-    background: #ffffff;
-    border: 1px solid #f2f2f2;
+    background: transparent;
+    border: 1px solid #c1d4e6;
     border-radius: 8px;
     background-image: url(../../images/backArrow.svg);
     background-repeat: no-repeat;
@@ -71,6 +76,11 @@
     font-weight: 700;
     font-size: 32px;
     line-height: 39px;
+
+    &_dark {
+      color: #c1d4e6;
+    }
+
     @media (max-width: 880px) {
       & {
         font-size: 24px;

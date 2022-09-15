@@ -14,6 +14,10 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
+
+    &_dark {
+      color: rgb(193, 212, 230);
+    }
   }
 
   &__subtitle {
@@ -25,5 +29,9 @@
     color: #9d9d9d;
 
     text-align: center;
+
+    &_dark {
+      color: rgb(193, 212, 230);
+    }
   }
 }

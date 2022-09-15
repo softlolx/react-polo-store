@@ -8,13 +8,14 @@
   justify-content: space-between;
   align-items: center;
 
-  background: #ffffff;
-  border: 1px solid #f3f3f3;
+  background: transparent;
+  border: 1px solid rgb(193, 212, 230);
   border-radius: 20px;
 
   &__image {
     display: block;
     width: 70px;
+    border-radius: 15px;
   }
 
   &__descriptionContainer {
@@ -29,6 +30,10 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
+
+    &_dark {
+      color: rgb(193, 212, 230);
+    }
   }
 
   &__price {
@@ -36,15 +41,21 @@
     font-weight: 700;
     font-size: 14px;
     line-height: 17px;
+
+    &_dark {
+      color: rgb(193, 212, 230);
+    }
   }
 
   &__deleteButton {
     width: 32px;
     height: 32px;
-    background-image: url(../../images/closeButton.svg);
-    border: none;
+    background-image: url(../../images/krest.svg);
+    border: 1px solid rgb(193, 212, 230);
     background-color: transparent;
     background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
 
     &:active {
       transform: scale(0.9);

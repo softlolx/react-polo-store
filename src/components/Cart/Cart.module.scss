@@ -40,15 +40,31 @@
 
   overflow: auto;
 
+  &_dark {
+    background-color: rgb(26, 26, 27);
+  }
+
   &__cartCloseButton {
-    &:active {
-      transform: scale(0.9);
-    }
+    border: none;
+    padding: 0;
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: transparent;
+    border: 1px solid rgb(193, 212, 230);
+    border-radius: 8px;
+    background-image: url(../../images/backArrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
 
     &:hover {
       cursor: pointer;
-      scale: 1.03;
+      scale: 1.1;
       transition: scale 0.15s ease-in-out;
+    }
+
+    &:active {
+      transform: scale(0.9);
     }
   }
 
@@ -69,6 +85,10 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 29px;
+
+    &_dark {
+      color: rgb(193, 212, 230);
+    }
   }
 
   &__list {
@@ -96,6 +116,9 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 19px;
+    &_dark {
+      color: rgb(193, 212, 230);
+    }
   }
 
   &__totalTax {
@@ -103,6 +126,9 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 19px;
+    &_dark {
+      color: rgb(193, 212, 230);
+    }
   }
 
   &__button {
