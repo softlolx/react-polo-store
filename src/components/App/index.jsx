@@ -29,9 +29,9 @@ function App() {
   useEffect(() => {
     (async function () {
       // this is a fake fetch request :)
-      setCards(await data);
+      setCards(data);
     })();
-  }, []);
+  });
 
   //opening and closing cart
   function toggleCartOpen(e) {
@@ -41,7 +41,7 @@ function App() {
   }
 
   function addToCart(id) {
-    const card = cards.filter((item) => item._id === id)[0];
+    const card = cards.find((item) => item._id === id);
 
     if (!cartItems.includes(card)) {
       setCartItems((prev) => [...prev, card]);
@@ -80,10 +80,11 @@ function App() {
   }
 
   function addToFavorite(id) {
-    const card = cards.filter((item) => item._id === id)[0];
+    const card = cards.find((item) => item._id === id);
 
     if (!favoritedItems.includes(card)) {
       setFavoritedItems((prev) => [...prev, card]);
+
       setCards((prev) =>
         prev.map((item) => {
           if (item._id == id) {
@@ -122,15 +123,9 @@ function App() {
     setOrderCompleted(true);
     setCartItems([]);
 
-    // setTimeout(() => {
-    //   setOrderCompleted(false);
-    //   setCards((prev) =>
-    //     prev.map((item) => {
-    //       item.addedToCart = false;
-    //       return item;
-    //     })
-    //   );
-    // }, 3500);
+    setTimeout(() => {
+      resetOrder();
+    }, 5000);
   }
 
   function resetOrder() {

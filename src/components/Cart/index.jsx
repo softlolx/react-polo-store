@@ -3,12 +3,11 @@ import closeButton from "../../images/closeButton.svg";
 import { useEffect, useContext } from "react";
 import { ThemeContext } from "../context";
 
-export function Cart({ toggleCart, orderSum, onOrder, children, resetOrder }) {
+export function Cart({ toggleCart, orderSum, onOrder, children }) {
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = "unset";
-      resetOrder();
     };
   }, []);
 

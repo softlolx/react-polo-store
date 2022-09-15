@@ -54,7 +54,7 @@ export function Card({
         </div>
         <button
           className={`${styles.card__addToCartButton} ${
-            isAddedToCart ? styles.card__addToCartButton_active : null
+            isAddedToCart ? styles.card__addToCartButton_active : ""
           }`}
           onClick={() => {
             addToCart(id);
